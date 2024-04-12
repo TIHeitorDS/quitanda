@@ -3,12 +3,12 @@ package fornecimento;
 public class Fruta {
     private String nome;
     private double preco;
-    private int quantidadeFornecida;
+    private int quantidade;
 
-    public Fruta(String nome, double preco, int quantidadeFornecida) {
+    public Fruta(String nome, double preco, int quantidade) {
         this.nome = nome;
         this.preco = preco;
-        this.quantidadeFornecida = quantidadeFornecida;
+        this.quantidade = quantidade;
     }
 
     public String getNome() {
@@ -27,12 +27,20 @@ public class Fruta {
         this.preco = preco;
     }
 
-    public int getQuantidadeFornecida() {
-        return quantidadeFornecida;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setQuantidadeFornecida(int quantidadeFornecida) {
-        this.quantidadeFornecida = quantidadeFornecida;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public void aumentarQuantidade(int quantidade) {
+        this.quantidade += quantidade;
+    }
+
+    public void diminuirQuantidade(int quantidade) {
+        this.quantidade -= quantidade;
     }
 
     @Override
@@ -40,7 +48,7 @@ public class Fruta {
         return "Fruta{" +
                 "nome='" + nome + '\'' +
                 ", preco=" + preco +
-                ", quantidadeFornecida=" + quantidadeFornecida +
+                ", quantidade=" + quantidade +
                 '}';
     }
 }
