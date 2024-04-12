@@ -1,33 +1,37 @@
 package fornecimento;
 
-import java.util.List;
+import java.util.ArrayList;
+
 import entidades.Fornecedor;
 
-public class Fornecimento extends Fornecedor {
-    public List<String> historicoDeFornecimento;
+public class Fornecimento {
+    private Fruta fruta;
+    private ArrayList<String> historico;
 
-    public Fornecimento(String nome, String telefone, String endereco, String cnpj, List<String> historicoDeFornecimento) {
-        super(nome, telefone, endereco, cnpj);
-        this.historicoDeFornecimento = historicoDeFornecimento;
+    public Fornecimento(Fruta fruta) {
+        this.fruta = fruta;
+        this.historico = new ArrayList<>();
     }
 
-    public List<String> getHistoricoDeFornecimento() {
-        return historicoDeFornecimento;
+    public Fruta getFruta() {
+        return fruta;
     }
 
-    public void setHistoricoDeFornecimento(List<String> historicoDeFornecimento) {
-        this.historicoDeFornecimento = historicoDeFornecimento;
+    public void setFruta(Fruta fruta) {
+        this.fruta = fruta;
     }
 
-    public Fornecedor criarFornecimento(String nome, String telefone, String endereco, String cnpj, List<String> historicoDeFornecimento) {
-        return new Fornecimento(nome, telefone, endereco, cnpj, historicoDeFornecimento);
+    public ArrayList<String> getHistorico() {
+        return historico;
     }
 
-    public void editarFornecimento(Fornecimento fornecimento, String nome, String telefone, String endereco, String cnpj, List<String> historicoDeFornecimento) {
-        fornecimento.setNome(nome);
-        fornecimento.setTelefone(telefone);
-        fornecimento.setEndereco(endereco);
-        fornecimento.setCnpj(cnpj);
-        fornecimento.setHistoricoDeFornecimento(historicoDeFornecimento);
+    public void setHistorico(ArrayList<String> historico) {
+        this.historico = historico;
     }
+
+    public void historicoDeFornecimento(Fornecedor fornecedor) {
+        String mensagem = fornecedor.getNome() +  " forneceu " + fruta.getQuantidadeFornecida() + " quantidade(s) de " + fruta.getNome();
+        historico.add(mensagem);
+    }
+    
 }
