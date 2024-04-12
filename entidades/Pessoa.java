@@ -1,9 +1,9 @@
 package entidades;
 
 public abstract class Pessoa {
-    public String nome;
-    public String telefone;
-    public String endereco;
+    private String nome;
+    private String telefone;
+    private String endereco;
 
     public Pessoa(String nome, String telefone, String endereco) {
         this.nome = nome;
@@ -37,10 +37,8 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", endereco='" + endereco + '\'' +
-                '}';
+        return  "nome: '" + nome + '\'' +
+                ", telefone: '" + telefone + '\'' +
+                ", endereco: '" + endereco + '\'';
     }
 }

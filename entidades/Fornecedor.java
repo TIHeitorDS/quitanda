@@ -1,5 +1,7 @@
 package entidades;
 
+import fornecimento.Fruta;
+
 public class Fornecedor extends Pessoa {
     private String cnpj;
 
@@ -16,13 +18,12 @@ public class Fornecedor extends Pessoa {
         this.cnpj = cnpj;
     }
 
+    public void fornecerFruta(String nome, double preco, int quantidade) {
+        Fruta fruta = new Fruta(nome, preco, quantidade);
+    }
+
     @Override
     public String toString() {
-        return super.toString() + " Fornecedor{" +
-                "cnpj='" + cnpj + '\'' +
-                ", nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", endereco='" + endereco + '\'' +
-                "} ";
+        return super.toString() + ", cnpj='" + cnpj + '\'';
     }
 }

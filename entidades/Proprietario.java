@@ -28,12 +28,8 @@ public class Proprietario extends Pessoa {
 
     @Override
     public String toString() {
-        return super.toString() + " Proprietario{" +
-                "email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                ", nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", endereco='" + endereco + '\'' +
-                "} ";
+        return super.toString() +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'';
     }
 }

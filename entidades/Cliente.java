@@ -18,11 +18,7 @@ public class Cliente extends Pessoa {
 
     @Override
     public String toString() {
-        return super.toString() + " Cliente{" +
-                "cpf='" + cpf + '\'' +
-                ", nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", endereco='" + endereco + '\'' +
-                "} ";
+        return super.toString() +
+                ", cpf: '" + cpf + '\'';
     }
 }
