@@ -1,7 +1,4 @@
-package entidades;
-
-import fornecimento.Fruta;
-import fornecimento.Fornecimento;
+package src.model.domain;
 
 public class Fornecedor extends Pessoa {
     private String cnpj;
@@ -28,15 +25,6 @@ public class Fornecedor extends Pessoa {
 
     public void setFornecimento(Fornecimento fornecimento) {
         this.fornecimento = fornecimento;
-    }
-
-    public Fruta fornecerFruta(String nome, double preco, int quantidade) {
-        Fruta fruta = new Fruta(nome, preco, quantidade);
-
-        this.fornecimento.setFruta(fruta);
-        this.fornecimento.historicoDeFornecimento(this);
-
-        return fruta;
     }
 
     @Override

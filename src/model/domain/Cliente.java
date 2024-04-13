@@ -1,6 +1,4 @@
-package entidades;
-
-import fornecimento.CarrinhoDeCompras;
+package src.model.domain;
 
 public class Cliente extends Pessoa {
     private String cpf;
@@ -19,6 +17,14 @@ public class Cliente extends Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public CarrinhoDeCompras getCarrinhoDeCompras() {
+        return carrinhoDeCompras;
+    }
+
+    public void setCarrinhoDeCompras(CarrinhoDeCompras carrinhoDeCompras) {
+        this.carrinhoDeCompras = carrinhoDeCompras;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package fornecimento;
+package src.model.domain;
 
 public class ItemDeCompra {
     private int quantidadeDoItem;
@@ -24,9 +24,9 @@ public class ItemDeCompra {
     public void setFruta(Fruta fruta) {
         this.fruta = fruta;
     }
-    
-    public void editarItemDeCompra(ItemDeCompra itemDeCompra, int quantidadeDoItem) {
-        itemDeCompra.setQuantidadeDoItem(quantidadeDoItem);
+
+    @Override
+    public String toString() {
+        return "ItemDeCompra [quantidadeDoItem=" + quantidadeDoItem + ", fruta=" + fruta.getNome() +  ", preco da fruta="+ fruta.getPreco() + ", preco total="+ (fruta.getPreco() * getQuantidadeDoItem()) +"]";
     }
- 
 }

@@ -1,4 +1,4 @@
-package fornecimento;
+package src.model.domain;
 
 public class Fruta {
     private String nome;
@@ -33,14 +33,6 @@ public class Fruta {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public void aumentarQuantidade(int quantidade) {
-        this.quantidade += quantidade;
-    }
-
-    public void diminuirQuantidade(int quantidade) {
-        this.quantidade -= quantidade;
     }
 
     @Override

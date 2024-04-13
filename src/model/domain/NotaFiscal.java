@@ -1,4 +1,4 @@
-package fornecimento;
+package src.model.domain;
 
 import java.util.Date;
 

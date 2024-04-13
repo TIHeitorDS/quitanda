@@ -1,4 +1,4 @@
-package entidades;
+package src.model.domain;
 
 public class Proprietario extends Pessoa {
     private String email;

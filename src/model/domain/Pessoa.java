@@ -1,4 +1,4 @@
-package entidades;
+package src.model.domain;
 
 public abstract class Pessoa {
     private String nome;
