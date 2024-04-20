@@ -1,5 +1,6 @@
 package controller;
 
+import model.dao.FornecedorDAO;
 import model.domain.Fornecedor;
 
 public final class FornecedorController {
@@ -8,5 +9,7 @@ public final class FornecedorController {
         fornecedor.setEndereco(endereco);
         fornecedor.setNome(nome);
         fornecedor.setCnpj(cnpj);
+
+        FornecedorDAO.editarFornecedor(fornecedor);
     }
 }
