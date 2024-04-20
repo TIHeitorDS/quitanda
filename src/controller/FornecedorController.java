@@ -1,17 +1,12 @@
-package src.controller;
+package controller;
 
-import src.model.domain.Fornecedor;
-import src.model.domain.Fruta;
+import model.domain.Fornecedor;
 
 public final class FornecedorController {
-
-    public static void fornecerFruta(String nome, double preco, int quantidade, Fornecedor fornecedor) {
-        Fruta fruta = new Fruta(nome, preco, quantidade);
-
-        fornecedor.getFornecimento().setFruta(fruta);
-        FornecimentoController.historicoDeFornecimento(fornecedor, fruta);
-        FrutaController.adicionarFruta(fruta);
+    public static void editar(Fornecedor fornecedor, String nome, String telefone, String cnpj, String endereco) {
+        fornecedor.setTelefone(telefone);
+        fornecedor.setEndereco(endereco);
+        fornecedor.setNome(nome);
+        fornecedor.setCnpj(cnpj);
     }
-
-
 }

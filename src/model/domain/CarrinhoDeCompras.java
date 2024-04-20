@@ -1,16 +1,16 @@
-package src.model.domain;
+package model.domain;
 
 import java.util.ArrayList;
 
 public class CarrinhoDeCompras {
-    ArrayList <ItemDeCompra> itens;
-    int quantidadeItens;
-    double valorTotal;
-    
+    private ArrayList<ItemDeCompra> itens;
+    private int quantidadeItens;
+    private double valorTotal;
+
     public CarrinhoDeCompras(int quantidadeItens, double valorTotal) {
         this.quantidadeItens = quantidadeItens;
         this.valorTotal = valorTotal;
-        this.itens = new ArrayList<ItemDeCompra>();
+        this.itens = new ArrayList<>();
     }
 
     public ArrayList<ItemDeCompra> getItens() {

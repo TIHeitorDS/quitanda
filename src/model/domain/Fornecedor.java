@@ -1,14 +1,26 @@
-package src.model.domain;
+package model.domain;
 
 public class Fornecedor extends Pessoa {
+    private int id;
     private String cnpj;
-    private Fornecimento fornecimento;
 
     public Fornecedor(String nome, String telefone, String endereco, String cnpj) {
         super(nome, telefone, endereco);
         this.cnpj = cnpj;
+    }
 
-        fornecimento = new Fornecimento();
+    public Fornecedor(int id, String nome, String telefone, String endereco, String cnpj) {
+        super(nome, telefone, endereco);
+        this.id = id;
+        this.cnpj = cnpj;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCnpj() {
@@ -18,19 +30,9 @@ public class Fornecedor extends Pessoa {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-    
-    public Fornecimento getFornecimento() {
-        return fornecimento;
-    }
-
-    public void setFornecimento(Fornecimento fornecimento) {
-        this.fornecimento = fornecimento;
-    }
 
     @Override
     public String toString() {
-        return "Fornecedor{" +
-                "cnpj='" + cnpj + '\'' +
-                "} " + super.toString();
+        return super.toString() + ", cnpj='" + cnpj + '\'';
     }
 }

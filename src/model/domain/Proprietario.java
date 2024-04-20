@@ -1,4 +1,4 @@
-package src.model.domain;
+package model.domain;
 
 public class Proprietario extends Pessoa {
     private String email;
@@ -29,7 +29,7 @@ public class Proprietario extends Pessoa {
     @Override
     public String toString() {
         return super.toString() +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'';
+                ", email: '" + email + '\'' +
+                ", senha: '" + senha + '\'';
     }
 }

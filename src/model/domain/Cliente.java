@@ -1,6 +1,7 @@
-package src.model.domain;
+package model.domain;
 
 public class Cliente extends Pessoa {
+    private int id;
     private String cpf;
     private CarrinhoDeCompras carrinhoDeCompras;
 
@@ -9,6 +10,22 @@ public class Cliente extends Pessoa {
         this.cpf = cpf;
 
         carrinhoDeCompras = new CarrinhoDeCompras(0, 0);
+    }
+
+    public Cliente(int id, String nome, String telefone, String endereco, String cpf) {
+        super(nome, telefone, endereco);
+        this.id = id;
+        this.cpf = cpf;
+
+        carrinhoDeCompras = new CarrinhoDeCompras(0, 0);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCpf() {

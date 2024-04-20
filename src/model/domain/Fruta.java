@@ -1,6 +1,7 @@
-package src.model.domain;
+package model.domain;
 
 public class Fruta {
+    private int id;
     private String nome;
     private double preco;
     private int quantidade;
@@ -9,6 +10,21 @@ public class Fruta {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+    }
+
+    public Fruta(int id, String nome, double preco, int quantidade) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -37,10 +53,8 @@ public class Fruta {
 
     @Override
     public String toString() {
-        return "Fruta{" +
-                "nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", quantidade=" + quantidade +
-                '}';
+        return "nome: '" + nome + '\'' +
+                ", preço: " + preco +
+                ", quantidade diponível para compra: " + quantidade;
     }
 }

@@ -1,4 +1,4 @@
-package src.model.domain;
+package model.domain;
 
 public abstract class Pessoa {
     private String nome;
@@ -37,7 +37,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return  "nome: '" + nome + '\'' +
+        return "nome: '" + nome + '\'' +
                 ", telefone: '" + telefone + '\'' +
                 ", endereco: '" + endereco + '\'';
     }

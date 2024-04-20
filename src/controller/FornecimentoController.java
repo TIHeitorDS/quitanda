@@ -1,16 +1,24 @@
-package src.controller;
+package controller;
 
-import src.model.domain.Fornecedor;
-import src.model.domain.Fruta;
+import model.dao.FrutaDAO;
+import model.domain.Fornecedor;
+import model.domain.Fruta;
+
+import java.util.ArrayList;
 
 public final class FornecimentoController {
+    public static void fornecerFruta(String nome, double preco, int quantidade, Fornecedor fornecedor) {
+        Fruta fruta = FrutaDAO.buscarFruta(nome);
 
-    public static void historicoDeFornecimento(Fornecedor fornecedor, Fruta fruta){
-        String mensagem = fornecedor.getNome() + " forneceu " + fruta.getQuantidade() + " unidades de " + fruta.getNome();
+        if (fruta != null) {
+            int quantidadeAtual = fruta.getQuantidade();
 
-        fornecedor.getFornecimento().getHistorico().add(mensagem);
+            fruta.setQuantidade(quantidadeAtual + quantidade);
+
+            FrutaDAO.editarFruta(fruta);
+        } else {
+            fruta = new Fruta(nome, preco, quantidade);
+            FrutaDAO.adicionarFruta(fruta, fornecedor.getId());
+        }
     }
-
-
-
 }
