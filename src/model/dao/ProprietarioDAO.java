@@ -5,12 +5,12 @@ import model.domain.Proprietario;
 import java.sql.SQLException;
 
 public class ProprietarioDAO {
-    public static Proprietario retornaProprietario(int id) {
-        var sql = "SELECT id_proprietario, nome, telefone, endereco, email, senha FROM proprietario WHERE id_proprietario=?";
+    public static Proprietario retornaProprietario(String email, String senha) {
+        var sql = "SELECT id_proprietario, nome, telefone, endereco, email, senha FROM proprietario WHERE email=? AND senha=?";
 
         try (var conn = DB.connect(); var pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-
+            pstmt.setString(1, email);
+            pstmt.setString(2, senha);
             var rs = pstmt.executeQuery();
 
             if (rs.next()) {
@@ -28,7 +28,5 @@ public class ProprietarioDAO {
         }
 
         return null;
-
-    
     }
 }

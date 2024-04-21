@@ -49,7 +49,7 @@ public class FornecedorDAO {
         }
     }
 
-    public static ArrayList<Fornecedor> listarForncedores() {
+    public static ArrayList<Fornecedor> listarFornecedores() {
         ArrayList<Fornecedor> fornecedores = new ArrayList<>();
         var sql = "SELECT * FROM fornecedor";
 

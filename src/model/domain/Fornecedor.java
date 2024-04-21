@@ -33,6 +33,7 @@ public class Fornecedor extends Pessoa {
 
     @Override
     public String toString() {
-        return super.toString() + ", cnpj='" + cnpj + '\'';
+        return "ID(" + getId() + ")" + " | Fornecedor: " + super.getNome() + "| CNPJ: " + getCnpj() + " | Telefone: " + super.getTelefone()
+        + " | Endereço: " + super.getEndereco();
     }
 }

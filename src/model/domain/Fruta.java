@@ -53,8 +53,6 @@ public class Fruta {
 
     @Override
     public String toString() {
-        return "nome: '" + nome + '\'' +
-                ", preço: " + preco +
-                ", quantidade diponível para compra: " + quantidade;
+        return "Nome: " + nome + " | Preço: R$ " + preco + " | Quantidade: " + quantidade;
     }
 }

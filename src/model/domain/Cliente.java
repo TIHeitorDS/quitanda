@@ -46,7 +46,7 @@ public class Cliente extends Pessoa {
 
     @Override
     public String toString() {
-        return super.toString() +
-                ", cpf: '" + cpf + '\'';
+        return "Nome: " + super.getNome() + " | Telefone: " + super.getTelefone() + 
+        " | Endereço: " + super.getEndereco() + " | CPF: " + cpf; 
     }
 }
