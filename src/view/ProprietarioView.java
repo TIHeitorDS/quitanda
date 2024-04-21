@@ -13,11 +13,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProprietarioView {
-    public static void display() {
-        Scanner input = new Scanner(System.in);
-
-        ArrayList<Fruta> frutas;
-        ArrayList<Fornecedor> fornecedores = FornecedorDAO.listarFornecedores();
+    public static void display(Thread thread, Scanner input, ArrayList<Fruta> frutas, ArrayList<Fornecedor> fornecedores) {
+        thread.start();
 
         int option = 0;
 
@@ -165,9 +162,9 @@ public class ProprietarioView {
                         System.out.println("[ADICIONAR CLIENTE DA LOJA]");
 
                         try {
-                            System.out.print("Insira o CPF do cliente: ");
-                            String cpfCliente = input.nextLine();
-                            Cliente cliente = ClienteDAO.buscarCliente(cpfCliente);
+                            System.out.print("Insira o id do cliente: ");
+                            int idCliente = Integer.parseInt(input.nextLine());
+                            Cliente cliente = ClienteDAO.buscarCliente(idCliente);
                             if (cliente == null) {
                                 System.out.print("Insira o nome do cliente: ");
                                 String nomeCliente = input.nextLine();
@@ -175,6 +172,8 @@ public class ProprietarioView {
                                 String telefoneCliente = input.nextLine();
                                 System.out.print("Insira o endereço do cliente: ");
                                 String enderecoCliente = input.nextLine();
+                                System.out.print("Insira o CPF do cliente: ");
+                                String cpfCliente = input.nextLine();
                                 cliente = new Cliente(nomeCliente, telefoneCliente, enderecoCliente, cpfCliente);
                                 ClienteDAO.adicionarCliente(cliente);
                             } else {
@@ -204,16 +203,16 @@ public class ProprietarioView {
                         System.out.print("\033[H\033[2J");
                         System.out.println("[REMOVER CLIENTE]");
                         try {
-                            System.out.print("Insira o CPF do cliente: ");
-                            String cpfCliente = input.nextLine();
+                            System.out.print("Insira o Id do cliente: ");
+                            int idCliente = Integer.parseInt(input.nextLine());
 
-                            Cliente cliente = ClienteDAO.buscarCliente(cpfCliente);
+                            Cliente cliente = ClienteDAO.buscarCliente(idCliente);
 
                             assert cliente != null;
                             if (cliente == null) {
                                 System.out.println("Cliente não encontrado.");
                             } else {
-                                ClienteDAO.removerCliente(cpfCliente);
+                                ClienteDAO.removerCliente(idCliente);
                                 System.out.println("\nOperação efetuada.");
                             }
                         } catch (NullPointerException e) {
@@ -225,6 +224,7 @@ public class ProprietarioView {
 
                     case 9:
                         System.out.println("Encerrando sessão...");
+                        thread.interrupt();
                         break;
 
                     default:
@@ -235,6 +235,5 @@ public class ProprietarioView {
             }
         } while (option != 9);
 
-        input.close();
     }
 }

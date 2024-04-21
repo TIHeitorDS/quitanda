@@ -31,11 +31,11 @@ public class ClienteDAO {
         }
     }
 
-    public static Cliente buscarCliente(String cpf) {
-        var sql = "SELECT id_cliente, nome_cliente, telefone_cliente, endereco, cpf_cliente FROM cliente WHERE cpf_cliente=?";
+    public static Cliente buscarCliente(int id) {
+        var sql = "SELECT id_cliente, nome_cliente, telefone_cliente, endereco, cpf_cliente FROM cliente WHERE id_cliente=?";
 
         try (var conn = DB.connect(); var pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, cpf);
+            pstmt.setInt(1, id);
 
             var rs = pstmt.executeQuery();
 
@@ -96,11 +96,11 @@ public class ClienteDAO {
         return clientes;
     }
 
-    public static void removerCliente(String cpf) {
-        var sql = "DELETE FROM cliente WHERE cpf_cliente=?";
+    public static void removerCliente(int id) {
+        var sql = "DELETE FROM cliente WHERE id_cliente=?";
 
         try (var conn = DB.connect(); var pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, cpf);
+            pstmt.setInt(1, id);
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
